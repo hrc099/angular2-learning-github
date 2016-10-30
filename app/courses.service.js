@@ -9,17 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AppComponent = (function () {
-    function AppComponent() {
+var CoursesService = (function () {
+    function CoursesService() {
     }
-    AppComponent = __decorate([
-        core_1.Component({
-            selector: 'my-app',
-            template: '<h1>Courses App</h1><courses></courses><authors></authors>'
-        }), 
+    CoursesService.prototype.getCourses = function () {
+        return ["HTML & CSS", "Javascript", "AngularJS", "Angular 2"];
+    };
+    CoursesService = __decorate([
+        core_1.Injectable(), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], CoursesService);
+    return CoursesService;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = CoursesService;
+//# sourceMappingURL=courses.service.js.map

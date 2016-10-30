@@ -9,17 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AppComponent = (function () {
-    function AppComponent() {
+var courses_service_1 = require('./courses.service');
+var CoursesComponent = (function () {
+    function CoursesComponent(cS) {
+        this.title = "If you want to learn from the best, try these";
+        this.courses = cS.getCourses();
     }
-    AppComponent = __decorate([
+    CoursesComponent = __decorate([
         core_1.Component({
-            selector: 'my-app',
-            template: '<h1>Courses App</h1><courses></courses><authors></authors>'
+            selector: 'courses',
+            template: "<h2>Courses</h2>{{ title }}\n  <input type=\"text\" autoGrow/>\n  <ul>\n    <li *ngFor=\"let course of courses\">{{ course }}</li>\n  </ul>",
+            providers: [courses_service_1.default],
         }), 
-        __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+        __metadata('design:paramtypes', [courses_service_1.default])
+    ], CoursesComponent);
+    return CoursesComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.CoursesComponent = CoursesComponent;
+//# sourceMappingURL=courses.component.js.map
